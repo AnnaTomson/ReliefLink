@@ -107,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen>
   }
 
   // New function to navigate to the Volunteer screen
-  void _navigateToVolunteer() {
+  /*void _navigateToVolunteer() {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const VolunteerScreen()),
@@ -128,7 +128,7 @@ class _HomeScreenState extends State<HomeScreen>
       context,
       MaterialPageRoute(builder: (context) => const ReceiverEnquiryScreen()),
     );
-  }
+  }*/
 
   // New function to navigate to the Login screen
   void _navigateToLogin() {
@@ -237,8 +237,8 @@ class _HomeScreenState extends State<HomeScreen>
                   _buildDrawerItem(Icons.settings, "Settings"),
                   _buildDrawerItem(Icons.history, "History"),
                   _buildDrawerItem(Icons.payment, "Payment"),
-                  _buildDrawerItem(Icons.info_outline, "Receiver Enquiry",
-                      onTap: _navigateToReceiverEnquiry),
+                  //_buildDrawerItem(Icons.info_outline, "Receiver Enquiry",
+                  //onTap: _navigateToReceiverEnquiry),
                   _buildDrawerItem(Icons.help, "Help & FAQ"),
                   const Spacer(),
                   const Divider(color: Colors.white30),
@@ -420,7 +420,7 @@ class _HomeScreenState extends State<HomeScreen>
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            CategoryWidget(
+            /*CategoryWidget(
               title: 'Volunteer',
               icon: Icons.volunteer_activism,
               color: Colors.teal,
@@ -431,7 +431,7 @@ class _HomeScreenState extends State<HomeScreen>
               icon: Icons.favorite,
               color: Colors.red[400]!,
               onPressed: _navigateToDonor,
-            ),
+            ),*/
           ],
         ),
       ],
