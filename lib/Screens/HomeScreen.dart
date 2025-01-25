@@ -120,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen>
       context,
       MaterialPageRoute(builder: (context) => const DonorScreen()),
     );
-  }
+  }*/
 
   // New function to navigate to the ReceiverEnquiry screen
   void _navigateToReceiverEnquiry() {
@@ -128,7 +128,7 @@ class _HomeScreenState extends State<HomeScreen>
       context,
       MaterialPageRoute(builder: (context) => const ReceiverEnquiryScreen()),
     );
-  }*/
+  }
 
   // New function to navigate to the Login screen
   void _navigateToLogin() {
