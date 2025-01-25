@@ -4,6 +4,7 @@ import 'Payment.dart'; // Import the Payment screen
 import 'SubScreens/Volunteer.dart'; // Import the Volunteer screen
 import 'SubScreens/Donor.dart'; // Import the Donor screen
 import 'SubScreens/ReceiverEnquiry.dart'; // Import the ReceiverEnquiry screen
+import 'SubScreens/DonationHistory.dart'; // Import the DonationHistory screen
 import 'loginScreen.dart'; // Import the login screen
 import 'package:firebase_auth/firebase_auth.dart'; // Import FirebaseAuth
 
@@ -107,7 +108,7 @@ class _HomeScreenState extends State<HomeScreen>
   }
 
   // New function to navigate to the Volunteer screen
-  /*void _navigateToVolunteer() {
+  void _navigateToVolunteer() {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const VolunteerScreen()),
@@ -120,13 +121,21 @@ class _HomeScreenState extends State<HomeScreen>
       context,
       MaterialPageRoute(builder: (context) => const DonorScreen()),
     );
-  }*/
+  }
 
   // New function to navigate to the ReceiverEnquiry screen
   void _navigateToReceiverEnquiry() {
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => const ReceiverEnquiryScreen()),
+    );
+  }
+
+  // New function to navigate to the DonationHistory screen
+  void _navigateToDonationHistory() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => DonationHistory()),
     );
   }
 
@@ -235,10 +244,12 @@ class _HomeScreenState extends State<HomeScreen>
                   _buildDrawerItem(Icons.create, "Create Fund"),
                   _buildDrawerItem(Icons.person, "Profile"),
                   _buildDrawerItem(Icons.settings, "Settings"),
-                  _buildDrawerItem(Icons.history, "History"),
+                  _buildDrawerItem(Icons.history, "History",
+                      onTap:
+                          _navigateToDonationHistory), // Updated to navigate to DonationHistory
                   _buildDrawerItem(Icons.payment, "Payment"),
-                  //_buildDrawerItem(Icons.info_outline, "Receiver Enquiry",
-                  //onTap: _navigateToReceiverEnquiry),
+                  _buildDrawerItem(Icons.info_outline, "Receiver Enquiry",
+                      onTap: _navigateToReceiverEnquiry),
                   _buildDrawerItem(Icons.help, "Help & FAQ"),
                   const Spacer(),
                   const Divider(color: Colors.white30),
@@ -420,7 +431,7 @@ class _HomeScreenState extends State<HomeScreen>
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            /*CategoryWidget(
+            CategoryWidget(
               title: 'Volunteer',
               icon: Icons.volunteer_activism,
               color: Colors.teal,
@@ -431,7 +442,7 @@ class _HomeScreenState extends State<HomeScreen>
               icon: Icons.favorite,
               color: Colors.red[400]!,
               onPressed: _navigateToDonor,
-            ),*/
+            ),
           ],
         ),
       ],

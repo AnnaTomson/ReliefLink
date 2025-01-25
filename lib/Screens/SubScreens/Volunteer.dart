@@ -235,7 +235,7 @@ class VolunteerScreen extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const PeopleAddScreen()),
+                          builder: (context) => PeopleAddScreen()),
                     );
                   }
                 },

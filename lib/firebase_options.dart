@@ -56,7 +56,7 @@ class DefaultFirebaseOptions {
     apiKey: 'AIzaSyCqMdlyJlJK5KzjYJL-8wJyjEYxXucTydY',
     appId: '1:1086364024441:android:78584f20cdd0a1adda9ea8',
     messagingSenderId: '1086364024441',
-    projectId: 'relieflink281721',
+    projectId: 'relieflink1-440ef',
     storageBucket: 'relieflink281721.appspot.com',
   );
 }

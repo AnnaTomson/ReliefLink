@@ -11,14 +11,13 @@ class PeopleAddScreen extends StatefulWidget {
 
 class _PeopleAddScreenState extends State<PeopleAddScreen> {
   final _formKey = GlobalKey<FormState>();
-  String _uniqueId = '';
   String _name = '';
   String _age = '';
   String _gender = 'Male';
   String _contactNumber = '';
-  String _medicalCondition = '';
   String _documentType = 'Aadhar Card';
   String _documentPath = '';
+  String _incomeRange = 'Under 1 Lakh'; // New income range variable
 
   final List<String> _documentTypes = [
     'Aadhar Card',
@@ -27,6 +26,19 @@ class _PeopleAddScreenState extends State<PeopleAddScreen> {
     'Driving License',
     'Passport'
   ];
+
+  final List<String> _incomeRanges = [
+    'Under 1 Lakh',
+    '1 to 5 Lakhs',
+    '5 to 10 Lakhs',
+    '10 Lakhs and above'
+  ]; // New income range options
+
+  bool _houseAffected = false;
+  bool _hasInfant = false;
+  bool _hasPregnantWoman = false;
+
+  final List<String> _yesNoOptions = ['Yes', 'No']; // Options for Yes/No fields
 
   @override
   Widget build(BuildContext context) {
@@ -78,8 +90,6 @@ class _PeopleAddScreenState extends State<PeopleAddScreen> {
                       padding: const EdgeInsets.all(24.0),
                       child: Column(
                         children: [
-                          _buildTextField('Unique ID', Icons.fingerprint),
-                          const SizedBox(height: 20),
                           _buildTextField('Name', Icons.person),
                           const SizedBox(height: 20),
                           _buildTextField('Age', Icons.cake, isNumber: true),
@@ -90,9 +100,42 @@ class _PeopleAddScreenState extends State<PeopleAddScreen> {
                           _buildTextField('Contact Number', Icons.phone,
                               isPhone: true),
                           const SizedBox(height: 20),
-                          _buildTextField('Medical Condition (if any)',
-                              Icons.medical_services,
-                              maxLines: 3),
+                          _buildDropdownField(
+                              'Income Range', Icons.money, _incomeRanges,
+                              initialValue: _incomeRange, onChanged: (value) {
+                            setState(() {
+                              _incomeRange = value!;
+                            });
+                          }), // New income range field
+                          const SizedBox(height: 20),
+                          _buildDropdownField('Did the house get affected?',
+                              Icons.home, _yesNoOptions,
+                              initialValue: _houseAffected ? 'Yes' : 'No',
+                              onChanged: (value) {
+                            setState(() {
+                              _houseAffected = value == 'Yes';
+                            });
+                          }),
+                          const SizedBox(height: 20),
+                          _buildDropdownField(
+                              'Is there any infant in the family?',
+                              Icons.child_care,
+                              _yesNoOptions,
+                              initialValue: _hasInfant ? 'Yes' : 'No',
+                              onChanged: (value) {
+                            setState(() {
+                              _hasInfant = value == 'Yes';
+                            });
+                          }),
+                          const SizedBox(height: 20),
+                          _buildDropdownField('Is there any pregnant woman?',
+                              Icons.pregnant_woman, _yesNoOptions,
+                              initialValue: _hasPregnantWoman ? 'Yes' : 'No',
+                              onChanged: (value) {
+                            setState(() {
+                              _hasPregnantWoman = value == 'Yes';
+                            });
+                          }),
                           const SizedBox(height: 20),
                           _buildDropdownField('Document Type',
                               Icons.description, _documentTypes),
@@ -129,9 +172,6 @@ class _PeopleAddScreenState extends State<PeopleAddScreen> {
       },
       onSaved: (value) {
         switch (label) {
-          case 'Unique ID':
-            _uniqueId = value!;
-            break;
           case 'Name':
             _name = value!;
             break;
@@ -141,30 +181,39 @@ class _PeopleAddScreenState extends State<PeopleAddScreen> {
           case 'Contact Number':
             _contactNumber = value!;
             break;
-          case 'Medical Condition (if any)':
-            _medicalCondition = value!;
-            break;
         }
       },
     );
   }
 
-  Widget _buildDropdownField(String label, IconData icon, List<String> items) {
+  Widget _buildDropdownField(String label, IconData icon, List<String> items,
+      {String? initialValue, ValueChanged<String?>? onChanged}) {
     return DropdownButtonFormField<String>(
       decoration: _inputDecoration(label, icon),
-      value: label == 'Gender' ? _gender : _documentType,
+      value: initialValue,
       items: items
           .map((item) => DropdownMenuItem(value: item, child: Text(item)))
           .toList(),
-      onChanged: (value) {
-        setState(() {
-          if (label == 'Gender') {
-            _gender = value!;
-          } else {
-            _documentType = value!;
-          }
-        });
-      },
+      onChanged: onChanged,
+    );
+  }
+
+  Widget _buildYesNoField(
+      String label, bool value, ValueChanged<bool?> onChanged) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Text(label, style: const TextStyle(fontSize: 16)),
+        const SizedBox(width: 10),
+        DropdownButton<bool>(
+          value: value,
+          items: [
+            DropdownMenuItem(value: true, child: Text('Yes')),
+            DropdownMenuItem(value: false, child: Text('No')),
+          ],
+          onChanged: onChanged,
+        ),
+      ],
     );
   }
 
@@ -241,16 +290,99 @@ class _PeopleAddScreenState extends State<PeopleAddScreen> {
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: const Text('Person added successfully'),
-          backgroundColor: Colors.teal.shade600,
-          behavior: SnackBarBehavior.floating,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        ),
+      String impactFactor = _calculateImpactFactor();
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return Dialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+            elevation: 16,
+            child: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.teal.shade300, Colors.teal.shade500],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              padding: const EdgeInsets.all(24.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Text(
+                    'Submission Successful',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                      color: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    'Impact Factor: $impactFactor',
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  const SizedBox(height: 24),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: const Text('OK'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.teal,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 24, vertical: 12),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        },
       );
-      Navigator.of(context).pop();
     }
+  }
+
+  String _calculateImpactFactor() {
+    int impact = 0;
+
+    // Calculate impact based on income range
+    switch (_incomeRange) {
+      case 'Under 1 Lakh':
+        impact += 1;
+        break;
+      case '1 to 5 Lakhs':
+        impact += 2;
+        break;
+      case '5 to 10 Lakhs':
+        impact += 3;
+        break;
+      case '10 Lakhs and above':
+        impact += 4;
+        break;
+    }
+
+    // Add impact for house affected
+    if (_houseAffected) {
+      impact += 2;
+    }
+
+    // Add impact for pregnant woman
+    if (_hasPregnantWoman) {
+      impact += 3;
+    }
+
+    return impact.toString();
   }
 }
