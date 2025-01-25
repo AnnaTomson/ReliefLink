@@ -252,6 +252,53 @@ class _CampRequirementsScreenState extends State<CampRequirementsScreen> {
     );
   }
 
+  void _deleteRequirement(int index) async {
+    final requirement = requirements[index];
+    try {
+      // Firestore deletion
+      await FirebaseFirestore.instance
+          .collection('RequirementList')
+          .where('RequirementName', isEqualTo: requirement.name)
+          .where('Quantity', isEqualTo: requirement.quantity)
+          .where('UrgencyLevel', isEqualTo: requirement.urgencyLevel)
+          .get()
+          .then((snapshot) {
+        for (var doc in snapshot.docs) {
+          doc.reference.delete();
+        }
+      });
+
+      setState(() {
+        requirements.removeAt(index);
+      });
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content:
+              const Text('Requirement deleted', style: TextStyle(fontSize: 16)),
+          backgroundColor: Colors.red.shade400,
+          behavior: SnackBarBehavior.floating,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+      );
+    } catch (e) {
+      print('Error deleting requirement: $e');
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: const Text('Error deleting requirement',
+              style: TextStyle(fontSize: 16)),
+          backgroundColor: Colors.red.shade400,
+          behavior: SnackBarBehavior.floating,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -326,6 +373,12 @@ class _CampRequirementsScreenState extends State<CampRequirementsScreen> {
                                     fontSize: 16, color: Colors.grey),
                               ),
                             ],
+                          ),
+                          trailing: IconButton(
+                            icon: const Icon(Icons.delete, color: Colors.red),
+                            onPressed: () {
+                              _deleteRequirement(index);
+                            },
                           ),
                         ),
                       ),
