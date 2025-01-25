@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'TransactionProcessing.dart'; // Import the TransactionProcessing screen
 
 class ReceiverEnquiryScreen extends StatefulWidget {
   const ReceiverEnquiryScreen({Key? key}) : super(key: key);
@@ -148,40 +149,11 @@ class _ReceiverEnquiryScreenState extends State<ReceiverEnquiryScreen> {
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
-      showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: const Text(
-              'Transaction Verification',
-              style: TextStyle(color: Colors.teal),
-            ),
-            content: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text('Unique ID: $_uniqueId'),
-                Text('Transaction ID: $_transactionId'),
-                const SizedBox(height: 16),
-                const Text('Verification status: Pending',
-                    style: TextStyle(fontWeight: FontWeight.bold)),
-              ],
-            ),
-            actions: [
-              TextButton(
-                child: const Text('OK', style: TextStyle(color: Colors.teal)),
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-              ),
-            ],
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20),
-            ),
-            backgroundColor: Colors.white,
-            elevation: 5,
-          );
-        },
+      Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) =>
+              TransactionProcessing(), // Navigate to TransactionProcessing
+        ),
       );
     }
   }
