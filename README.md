@@ -46,8 +46,9 @@ For Software:
 ### Project Documentation
 For Software:
 
-# Screenshots (Add at least 3)
+# Screenshots 
 ![Alt text](https://github.com/AnnaTomson/ReliefLink/blob/main/images/addperson.jpg)
+
 The Add People page allows volunteers to add individuals to disaster relief camps. For each person added:
 
 Input Details: Volunteers fill in necessary information such as name, age, and specific needs.
@@ -55,6 +56,7 @@ Impact Factor Calculation: The system calculates an Impact Factor based on the d
 This feature ensures a data-driven approach to resource allocation, optimizing aid distribution based on the needs of each individual.
 
 ![Alt text ](https://github.com/AnnaTomson/ReliefLink/blob/main/images/home.jpg)
+
 The Home Screen provides easy navigation to key features of the app:
 
 Donor Page: Access to donate items or money for disaster relief efforts.
@@ -63,6 +65,7 @@ Sidebar Menu: Quick links to History, Transaction Enquiry, and Payment for In-Tr
 The Home Screen serves as the central hub, offering seamless access to donation, volunteering, and tracking, ensuring users can efficiently contribute and stay informed
 
 ![Alt text](https://github.com/AnnaTomson/ReliefLink/blob/main/images/requirements.jpg)
+
 The Camp Requirement screen allows volunteers to add specific needs for disaster relief camps, which are then displayed to donors for contribution. Volunteers can:
 
 Add Requirements: List essential items needed for the camp, including quantity and urgency.
