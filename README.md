@@ -1,23 +1,23 @@
 # ReliefLink
 
 
-## Basic Details
-### Team Name: [Name]
+## Direct Disaster Relief Fund Distribution Mobile Application
+### Team Name: TriAce
 
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1: Anna Tomson - TKMCE
+- Member 2: Arya Rajeev - TKMCE
+- Member 3: Anakha RA - TKMCE
 
 ### Hosted Project Link
 [mention your project hosted project link here]
 
 ### Project Description
-[2-3 lines about what your project does]
+The ReliefLink mobile application connects donors directly with disaster-affected individuals, bypassing intermediaries to promote transparency and efficiency. It provides real-time updates on camp needs, enabling donors to contribute targeted resources, and utilizes an impact factor to prioritize aid for the most vulnerable. By streamlining the distribution process, ReliefLink ensures equitable support and empowers donors to make meaningful contributions to disaster recovery efforts.
 
 ### The Problem statement
-[What ridiculous problem are you solving?]
+Current disaster relief systems often rely on government intermediaries to distribute funds, leading to inefficiencies and potential corruption. This can result in some individuals receiving aid while others, equally in need, do not. To address these issues, this project proposes a mobile application that facilitates direct transfers from donors to those in need, bypassing intermediaries and ensuring that aid reaches the intended recipients.
 
 ### The Solution
 [How are you solving it? Keep it fun!]
