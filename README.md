@@ -48,16 +48,36 @@ For Software:
 
 # Screenshots (Add at least 3)
 ![Alt text](https://github.com/AnnaTomson/ReliefLink/blob/main/images/addperson.jpg)
-*Add caption explaining what this shows*
+The Add People page allows volunteers to add individuals to disaster relief camps. For each person added:
+
+Input Details: Volunteers fill in necessary information such as name, age, and specific needs.
+Impact Factor Calculation: The system calculates an Impact Factor based on the details provided, helping prioritize assistance and track the overall impact.
+This feature ensures a data-driven approach to resource allocation, optimizing aid distribution based on the needs of each individual.
 
 ![Alt text ](https://github.com/AnnaTomson/ReliefLink/blob/main/images/home.jpg)
-*Add caption explaining what this shows*
+The Home Screen provides easy navigation to key features of the app:
+
+Donor Page: Access to donate items or money for disaster relief efforts.
+Volunteer Page: Options to add camp requirements or people to camps and track their impact.
+Sidebar Menu: Quick links to History, Transaction Enquiry, and Payment for In-Trend Disasters.
+The Home Screen serves as the central hub, offering seamless access to donation, volunteering, and tracking, ensuring users can efficiently contribute and stay informed
 
 ![Alt text](https://github.com/AnnaTomson/ReliefLink/blob/main/images/requirements.jpg)
-*Add caption explaining what this shows*
+The Camp Requirement screen allows volunteers to add specific needs for disaster relief camps, which are then displayed to donors for contribution. Volunteers can:
 
-![Alt text ](https://github.com/AnnaTomson/ReliefLink/blob/main/images/home.jpg)
-*Add caption explaining what this shows*
+Add Requirements: List essential items needed for the camp, including quantity and urgency.
+Update/Remove Items: Modify or remove requirements as needs change.
+Display to Donors: Requirements are visible to donors, enabling targeted donations.
+This feature ensures optimized resource collection and distribution, streamlining aid efforts by matching donations with immediate needs.
+
+![Alt text](https://github.com/AnnaTomson/ReliefLink/blob/main/images/transaction.jpg)
+The Transaction Enquiry page ensures transparency in donations. Users can:
+
+View Donation History: See details of past donations, including amounts and destinations.
+Check Status: Track the current status of donations (processed, pending, etc.).
+View Impact: Understand how the donations were used and their impact.
+Receiver Information: Access details about the recipient camps or organizations.
+This page builds trust by providing clear, accountable insights into the donation process.
 
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
