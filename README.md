@@ -157,6 +157,7 @@ Once authenticated, the user is taken to the Home Screen, which contains four pr
 ### Project Demo
 # Video
 https://drive.google.com/file/d/1nCvgSF20r-2DX_IMCg6eKNeo2JYxfNFu/view?usp=drive_link
+
 Login Screen
 - New User: If the user is new, they can navigate to the *Sign-Up Screen*.
 - Existing User: If the user is already registered, they can log in and proceed to the *Home Screen*.
