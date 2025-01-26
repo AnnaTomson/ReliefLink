@@ -11,7 +11,7 @@
 - Member 3: Anna Tomson - TKMCE
 
 ### Hosted Project Link
-[mention your project hosted project link here]
+https://drive.google.com/file/d/1nCvgSF20r-2DX_IMCg6eKNeo2JYxfNFu/view?usp=drive_link
 
 ### Project Description
 The ReliefLink mobile application connects donors directly with disaster-affected individuals, bypassing intermediaries to promote transparency and efficiency. It provides real-time updates on camp needs, enabling donors to contribute targeted resources, and utilizes an impact factor to prioritize aid for the most vulnerable. By streamlining the distribution process, ReliefLink ensures equitable support and empowers donors to make meaningful contributions to disaster recovery efforts.
@@ -116,6 +116,7 @@ Display to Donors: Requirements are visible to donors, enabling targeted donatio
 This feature ensures optimized resource collection and distribution, streamlining aid efforts by matching donations with immediate needs.
 
 ![Alt text](https://github.com/AnnaTomson/ReliefLink/blob/main/images/transaction.jpg)
+
 The Transaction Enquiry page ensures transparency in donations. Users can:
 
 View Donation History: See details of past donations, including amounts and destinations.
@@ -181,13 +182,11 @@ Once authenticated, the user is taken to the Home Screen, which contains four pr
    - Post Camp Help:
      - Users can directly make monetary donations to support post-camp initiatives or further relief efforts.
 
-# Additional Demos
-[Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- Anna: Login Screen, Donar Screen, Add People, Search
+- Arya: Payment n SignUp screen, Camp Details, Donation History, Transaction Details
+- Anakha: Enquiry and Volunteer, Impact Factor, History Navigation, Navigation, Requirements Delete, Help
 
 ---
-Made with ❤️ at TinkerHub
+Made with ❤️ at TinkerHub by TriAce
