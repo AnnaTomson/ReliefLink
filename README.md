@@ -6,9 +6,9 @@
 
 
 ### Team Members
-- Member 1: Anna Tomson - TKMCE
+- Member 1: Anakha RA - TKMCE
 - Member 2: Arya Rajeev - TKMCE
-- Member 3: Anakha RA - TKMCE
+- Member 3: Anna Tomson - TKMCE
 
 ### Hosted Project Link
 [mention your project hosted project link here]
