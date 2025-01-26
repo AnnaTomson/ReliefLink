@@ -89,13 +89,6 @@ Display a list of past donations made by the user.
 Provides information about a specific transaction, including legal details of the recipient and the allocation of funds. 
 
 # Screenshots 
-![Alt text](https://github.com/AnnaTomson/ReliefLink/blob/main/images/addperson.jpg)
-
-The Add People page allows volunteers to add individuals to disaster relief camps. For each person added:
-
-Input Details: Volunteers fill in necessary information such as name, age, and specific needs.
-Impact Factor Calculation: The system calculates an Impact Factor based on the details provided, helping prioritize assistance and track the overall impact.
-This feature ensures a data-driven approach to resource allocation, optimizing aid distribution based on the needs of each individual.
 
 ![Alt text ](https://github.com/AnnaTomson/ReliefLink/blob/main/images/home.jpg)
 
@@ -105,6 +98,14 @@ Donor Page: Access to donate items or money for disaster relief efforts.
 Volunteer Page: Options to add camp requirements or people to camps and track their impact.
 Sidebar Menu: Quick links to History, Transaction Enquiry, and Payment for In-Trend Disasters.
 The Home Screen serves as the central hub, offering seamless access to donation, volunteering, and tracking, ensuring users can efficiently contribute and stay informed
+
+![Alt text](https://github.com/AnnaTomson/ReliefLink/blob/main/images/addperson.jpg)
+
+The Add People page allows volunteers to add individuals to disaster relief camps. For each person added:
+
+Input Details: Volunteers fill in necessary information such as name, age, and specific needs.
+Impact Factor Calculation: The system calculates an Impact Factor based on the details provided, helping prioritize assistance and track the overall impact.
+This feature ensures a data-driven approach to resource allocation, optimizing aid distribution based on the needs of each individual.
 
 ![Alt text](https://github.com/AnnaTomson/ReliefLink/blob/main/images/requirements.jpg)
 
