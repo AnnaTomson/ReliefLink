@@ -11,7 +11,7 @@ class _CampHelpScreenState extends State<CampHelpScreen> {
   final List<DonationItem> donationItems = [
     DonationItem(
       name: 'Bottled Water',
-      description: '1 liter bottles, pack of 12',
+      description: '1 litre bottles, pack of 12',
       icon: Icons.local_drink,
       requiredQuantity: 100,
     ),
@@ -40,6 +40,8 @@ class _CampHelpScreenState extends State<CampHelpScreen> {
       requiredQuantity: 75,
     ),
   ];
+
+  String searchQuery = '';
 
   @override
   Widget build(BuildContext context) {
@@ -86,22 +88,61 @@ class _CampHelpScreenState extends State<CampHelpScreen> {
           ),
         ),
         child: SafeArea(
-          child: ListView.builder(
-            padding: const EdgeInsets.symmetric(vertical: 16),
-            itemCount: donationItems.length,
-            itemBuilder: (context, index) {
-              return DonationItemTile(
-                item: donationItems[index],
-                onDonate: (int quantity) {
-                  setState(() {
-                    donationItems[index].requiredQuantity -= quantity;
-                    if (donationItems[index].requiredQuantity < 0) {
-                      donationItems[index].requiredQuantity = 0;
-                    }
-                  });
-                },
-              );
-            },
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    labelText: 'Search',
+                    filled: true,
+                    fillColor: Colors.teal.shade100, // Match color to screen
+                    border: OutlineInputBorder(
+                      borderRadius:
+                          BorderRadius.circular(30), // Rounded corners
+                      borderSide: BorderSide.none, // Remove border
+                    ),
+                    prefixIcon: const Icon(Icons.search, color: Colors.teal),
+                    contentPadding: const EdgeInsets.symmetric(
+                        vertical: 15), // Padding for better UI
+                    hintText: 'Search for items...',
+                    hintStyle: TextStyle(
+                        color: Colors.teal.shade400), // Hint text color
+                  ),
+                  onChanged: (value) {
+                    setState(() {
+                      searchQuery = value.toLowerCase();
+                    });
+                  },
+                ),
+              ),
+              Expanded(
+                child: ListView.builder(
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  itemCount: donationItems
+                      .where((item) =>
+                          item.name.toLowerCase().contains(searchQuery))
+                      .length,
+                  itemBuilder: (context, index) {
+                    final filteredItems = donationItems
+                        .where((item) =>
+                            item.name.toLowerCase().contains(searchQuery))
+                        .toList();
+                    return DonationItemTile(
+                      item: filteredItems[index],
+                      onDonate: (int quantity) {
+                        setState(() {
+                          filteredItems[index].requiredQuantity -= quantity;
+                          if (filteredItems[index].requiredQuantity < 0) {
+                            filteredItems[index].requiredQuantity = 0;
+                          }
+                        });
+                      },
+                    );
+                  },
+                ),
+              ),
+            ],
           ),
         ),
       ),
