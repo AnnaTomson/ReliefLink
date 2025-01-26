@@ -83,30 +83,33 @@ Receiver Information: Access details about the recipient camps or organizations.
 This page builds trust by providing clear, accountable insights into the donation process.
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+![Alt text](https://github.com/AnnaTomson/ReliefLink/blob/main/images/workflow.jpg)
 
-For Hardware:
+Login Screen
+- New User: If the user is new, they can navigate to the *Sign-Up Screen*.
+- Existing User: If the user is already registered, they can log in and proceed to the *Home Screen*.
 
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
+Home Screen
+Once authenticated, the user is taken to the Home Screen, which contains four primary navigation options:
+1. Sidebar Menu:
+   - Profile: Access user profile information.
+   - History: View the history of past donations and interactions.
+   - Transaction Enquiry: Check the status of donations or volunteer activities.
 
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
+2. Donation to Leading Disaster: This option allows the user to donate to a disaster relief effort or leading disaster initiatives.
 
-# Build Photos
-![Team](Add photo of your team here)
+3. Volunteer Screen: 
+   - Add Camp Requirement:
+     - Users can add the required items for disaster camps, along with their urgency and quantity. If necessary, they can also delete requirements.
+   - Add People to the Camp:
+     - Users can add individuals to camps and calculate the *Impact Factor*, which helps prioritize assistance and track the number of people impacted.
 
+4. Donor Screen: 
+   - Camp Help:
+     - Users can donate the required items for a specific camp based on current needs.
+   - Post Camp Help:
+     - Users can directly make monetary donations to support post-camp initiatives or further relief efforts.
 
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
 
 ### Project Demo
 # Video
