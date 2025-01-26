@@ -107,8 +107,31 @@ For Hardware:
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
+https://drive.google.com/file/d/1nCvgSF20r-2DX_IMCg6eKNeo2JYxfNFu/view?usp=drive_link
+Login Screen
+- New User: If the user is new, they can navigate to the *Sign-Up Screen*.
+- Existing User: If the user is already registered, they can log in and proceed to the *Home Screen*.
+
+Home Screen
+Once authenticated, the user is taken to the Home Screen, which contains four primary navigation options:
+1. Sidebar Menu:
+   - Profile: Access user profile information.
+   - History: View the history of past donations and interactions.
+   - Transaction Enquiry: Check the status of donations or volunteer activities.
+
+2. Donation to Leading Disaster: This option allows the user to donate to a disaster relief effort or leading disaster initiatives.
+
+3. Volunteer Screen: 
+   - Add Camp Requirement:
+     - Users can add the required items for disaster camps, along with their urgency and quantity. If necessary, they can also delete requirements.
+   - Add People to the Camp:
+     - Users can add individuals to camps and calculate the *Impact Factor*, which helps prioritize assistance and track the number of people impacted.
+
+4. Donor Screen: 
+   - Camp Help:
+     - Users can donate the required items for a specific camp based on current needs.
+   - Post Camp Help:
+     - Users can directly make monetary donations to support post-camp initiatives or further relief efforts.
 
 # Additional Demos
 [Add any extra demo materials/links]
