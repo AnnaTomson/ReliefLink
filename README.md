@@ -50,7 +50,7 @@ For Software:
 ![Alt text](https://github.com/AnnaTomson/ReliefLink/blob/main/images/addperson.jpg)
 *Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
+![Alt text ](https://github.com/AnnaTomson/ReliefLink/blob/main/images/home.jpg)
 *Add caption explaining what this shows*
 
 ![Screenshot3](Add screenshot 3 here with proper name)
