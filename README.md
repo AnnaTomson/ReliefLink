@@ -37,14 +37,56 @@ For Software:
 
 ### Implementation
 For Software:
+
 # Installation
-[commands]
+1. Install Dependencies:
+   - Frontend (Flutter): flutter pub get
+     
+2. Setup Firebase:
+   - Create a Firebase project and download the google-services.json (for Android)
+   - Place the files in the appropriate directories: android/app for google-services.json
+     
+3. Configure Environment Variables:
+   - Create a .env file for backend configurations.
+     - FIREBASE_API_KEY=your_api_key
+     - DATABASE_URL=your_database_url
+     - SECRET_KEY=your_secret_key
 
 # Run
-[commands]
+1. Frontend:
+    - Run the Flutter app on an emulator or physical device: flutter run
+      
+2. Emulator Setup:
+   - Launch the Android emulator if required:
+     - flutter emulators --launch <emulator_id>
+     - flutter run
 
 ### Project Documentation
 For Software:
+Screens
+1. Home Screen:
+Overview of campaigns, user role selection, and donation progress.
+
+2. Immediate Camp Needs Screen:
+Live updates of disaster-affected areas and specific requirements.
+
+3. Post-Camp Support Screen:
+List of individual recovery needs with prioritized Impact Factors.
+
+4. Donation Screen:
+Secure payment gateway for processing contributions.
+
+5. Profile Screen:
+User information, role-specific features, and donation history.
+
+6. Login/Signup Screen:
+User authentication and account creation.
+
+7. Donation History Screen:
+Display a list of past donations made by the user.
+
+8. Transaction Enquiry Screen:
+Provides information about a specific transaction, including legal details of the recipient and the allocation of funds. 
 
 # Screenshots 
 ![Alt text](https://github.com/AnnaTomson/ReliefLink/blob/main/images/addperson.jpg)
