@@ -25,10 +25,14 @@ Current disaster relief systems often rely on government intermediaries to distr
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- Dart
+- Flutter
+- Built-in Dart/Flutter Libraries: package:flutter/material.dart
+- 1. Flutter SDK
+  2. IDE/Code Editor: 1. Android Studio
+                      2. Visual Studio Code
+                      3. Intellij IDEA
+  3.Dart Compiler
 
 For Hardware:
 - [List main components]
