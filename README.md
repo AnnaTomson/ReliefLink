@@ -20,7 +20,9 @@ The ReliefLink mobile application connects donors directly with disaster-affecte
 Current disaster relief systems often rely on government intermediaries to distribute funds, leading to inefficiencies and potential corruption. This can result in some individuals receiving aid while others, equally in need, do not. To address these issues, this project proposes a mobile application that facilitates direct transfers from donors to those in need, bypassing intermediaries and ensuring that aid reaches the intended recipients.
 
 ### The Solution
-[How are you solving it? Keep it fun!]
+ReliefLink serves as a bridge between donors and disaster-affected individuals, enabling targeted, transparent, and effective aid distribution while maintaining privacy. The app features two core functionalities: Immediate Camp Needs, where volunteers update real-time camp requirements based on resident demographics, allowing donors to provide swift and precise support, and Post-Camp Support, which focuses on helping individuals rebuild their lives by identifying primary needs like shelter and healthcare and assessing vulnerabilities such as age, health, and financial loss.
+
+To ensure fair prioritization, the app uses an Impact Factor, a weighted score calculated from parameters such as medical emergencies, shelter needs, and income loss. This dynamic system continuously updates and sorts beneficiaries, allocating donations in real time to those most in need. Donor and recipient identities are kept confidential, with donors able to track how their contributions are used, ensuring transparency while respecting privacy. ReliefLink empowers donors to make meaningful contributions and supports sustainable recovery efforts for disaster-affected individuals.
 
 ## Technical Details
 ### Technologies/Components Used
