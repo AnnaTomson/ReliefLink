@@ -34,10 +34,6 @@ For Software:
   2. IDE/Code Editor:   1. Android Studio   2. Visual Studio Code   3. Intellij IDEA
   3. Dart Compiler
 
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
 
 ### Implementation
 For Software:
