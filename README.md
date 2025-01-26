@@ -29,10 +29,8 @@ For Software:
 - Flutter
 - Built-in Dart/Flutter Libraries: package:flutter/material.dart
 - 1. Flutter SDK
-  2. IDE/Code Editor: 1. Android Studio
-                      2. Visual Studio Code
-                      3. Intellij IDEA
-  3.Dart Compiler
+  2. IDE/Code Editor:   1. Android Studio   2. Visual Studio Code   3. Intellij IDEA
+  3. Dart Compiler
 
 For Hardware:
 - [List main components]
