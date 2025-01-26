@@ -187,7 +187,7 @@ Once authenticated, the user is taken to the Home Screen, which contains four pr
 
 ## Team Contributions
 - Anna: Login Screen, Donar Screen, Add People, Search
-- Arya: Payment n SignUp screen, Camp Details, Donation History, Transaction Details
+- Arya: Payment and SignUp screen, Camp Details, Donation History, Transaction Details
 - Anakha: Enquiry and Volunteer, Impact Factor, History Navigation, Navigation, Requirements Delete, Help
 
 ---
